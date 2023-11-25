@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.joinchat-header{
+  font-size: 45px;
+  background: linear-gradient(90deg, rgb(27, 121, 142), rgb(153, 29, 29), rgb(5, 64, 81));
+  color: transparent;
+  background-clip: text;
+}
