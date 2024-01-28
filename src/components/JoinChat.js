@@ -14,12 +14,7 @@ const JoinChat = () => {
         //   const newUrl = `${location.pathname}?name=${name}&email=${room}`;
         const newUrl = `/chat?name=${username}&room=${room}`;
 
-        if (username && room) {
-            navigate(newUrl);
-        }else{
-            alert("Enter details");
-        }
-        
+        navigate(newUrl); 
 
     };
 
@@ -31,10 +26,10 @@ const JoinChat = () => {
                     <h1 className='joinchat-header'>Welcome to OnChatter</h1>
                     <div className="name-box my-4">
                         <label htmlFor="inputCity"><h4>Enter Your Name</h4></label>
-                        <input type="text" className="form-control form-control-lg name-input" placeholder='Enter Your Name' name="name" id="name" />
+                        <input type="text" className="form-control form-control-lg name-input" placeholder='Enter Your Name' name="name" id="name" required/>
                     </div>
                     
-                    <select className="form-select select-input my-3 form-select-lg mb-3" name="room" id="room" aria-label="Default select example">
+                    <select className="form-select select-input my-3 form-select-lg mb-3" name="room" id="room" aria-label="Default select example" required>
                         <option value="India">Select Room</option>
                         <option value="London">London</option>
                         <option value="Banaras">Banaras</option>
@@ -42,7 +37,7 @@ const JoinChat = () => {
                         <option value="Tokyo">Tokyo</option>
                     </select>
 
-                    <button type="submit" className="btn btn-primary btn-lg my-2 btn-joinChat" >Submit</button>
+                    <button type="submit" className="btn btn-warning border btn-lg my-2 btn-joinChat" >Join Chat</button>
 
                 </form>
                

@@ -4,8 +4,8 @@ import { socket } from '../socket';
 
 const Chat = () => {
 
-  // const [chatMessage, setChatMessage] = useState();
-  const history = useNavigate();
+  const navigate = useNavigate();
+ 
 
   useEffect(() => {
 
@@ -34,6 +34,12 @@ const Chat = () => {
       outputUsers(sUsers);
     });
 
+    //random room chat
+    socket.on('random-chat', randomRoom => {
+      console.log(randomRoom);
+    })
+
+
   }, [])
 
 
@@ -57,7 +63,8 @@ const Chat = () => {
   const handleLeaveChat = () => {
     socket.disconnect(true);
     const url = `/joinchat`;
-    history(url);
+    navigate(url);
+    window.location.reload();
   }
 
 
@@ -102,16 +109,16 @@ const Chat = () => {
 
       <header className="chat-header">
         <h1><i className="fas fa-smile"></i> Real-Chat</h1>
-        <button className="btn-leave" onClick={handleLeaveChat}>Leave Room</button>
+        <button className="btn-leave" onClick={handleLeaveChat}>Leave Chat</button>
       </header>
 
       <div className="row">
 
         <div className="col-lg-3 left">
           <div className="chat-sidebar">
-            <h3><i className="fas fa-comments"></i> Room Name:</h3>
+            <h3><i className="fas fa-comments"></i> Room Info:</h3>
             <h2 id="room-name">kk</h2>
-            <h3><i className="fas fa-users"></i>Users</h3>
+            <h3><i className="fas fa-users"></i> Users</h3>
             <ul id="users"></ul>
 
           </div>
