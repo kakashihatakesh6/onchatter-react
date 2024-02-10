@@ -41,12 +41,14 @@ function App() {
         <div className="container">
 
           <Routes>
+
             <Route path='/' element={<Home showAlert={showAlert} />} />
             <Route path='/about' element={<About />} />
             <Route path='/login' element={<Login showAlert={showAlert} />} />
             <Route path='/signup' element={<SignUp showAlert={showAlert} />} />
             <Route path='/joinchat' element={<JoinChat showAlert={showAlert} />} />
             <Route path='/chat' element={<Chat showAlert={showAlert} />} />
+            
           </Routes>
         
         </div>

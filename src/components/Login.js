@@ -33,8 +33,6 @@ const Login = (props) => {
         }
     }
 
-
-
     return (
         <div>
             <h1 className='my-4'>Login to your Account</h1>
